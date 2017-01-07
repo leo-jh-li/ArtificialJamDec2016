@@ -8,6 +8,8 @@ TagManager:
   - KeyDoor
   - ColourDoor
   - onlyTrigger
+  - StarFloor
+  - Wall
   layers:
   - Default
   - TransparentFX
