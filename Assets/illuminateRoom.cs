@@ -8,6 +8,7 @@ public class illuminateRoom : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		//Find the parent room and illuminate the place (Make visible)
 		Transform parent = col.gameObject.transform.parent;
+		GetComponent<Collider2D> ().enabled = false;
 		StartCoroutine (findIllum);
 	}
 
