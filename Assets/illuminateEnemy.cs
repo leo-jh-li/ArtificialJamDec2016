@@ -14,12 +14,14 @@ public class illuminateEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		foreach (GameObject player in playerReference) {
-			RaycastHit2D hit = Physics2D (transform.position, (player.transform.position - transform.position));
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, (player.transform.position - transform.position));
 			if (hit.collider != null) {
 				if (hit.transform.gameObject.layer == LayerMask.NameToLayer ("Player")) {
 					GetComponent<SpriteRenderer> ().enabled = true;
+					break;
+				} else {
+					GetComponent<SpriteRenderer> ().enabled = false;
 				}
-				break;
 			}
 		}
 	}
