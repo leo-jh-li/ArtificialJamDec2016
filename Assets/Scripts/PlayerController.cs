@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public GameObject face;
 	Stack keys = new Stack();
+	SpriteRenderer renderer;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+		renderer = GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -66,13 +68,12 @@ public class PlayerController : MonoBehaviour {
 			popped.SetActive (false);
 		}
 		else if (coll.gameObject.CompareTag ("ColourDoor")) {
-			// TODO: opening colour doors
-			coll.gameObject.GetComponent<ColourDoorManager>().TryOpen ("test");
+			ColourDoorManager.TryOpen (renderer.color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
 		}
 	}
 
 	public bool checkHasKey(){
-		return !(keys.Count == 0);
+			return !(keys.Count == 0);
 	}
 
 	public float calculateAngle(Vector2 vec1, Vector2 vec2){

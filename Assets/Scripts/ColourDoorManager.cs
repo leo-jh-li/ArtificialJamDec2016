@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ColourDoorManager : MonoBehaviour {
 
-	public void TryOpen (string colour) {
+	public void TryOpen (Color playerColor, Color doorColor, Collider2D coll ) {
+
 		// TODO: test player colour against door's colour
-		/*
-		if (true)
-		{	
-			this.gameObject.SetActive (false);
+		if (playerColor.a == doorColor.a && playerColor.b == doorColor.b && playerColor.g == doorColor.g) {
+			coll.enabled = false;
 		}
-		*/
 	}
 }
