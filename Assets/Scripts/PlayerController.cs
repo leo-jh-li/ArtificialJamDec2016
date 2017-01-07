@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		moveVertical = Input.GetAxisRaw ("Vertical");
-		print (new Vector2(moveHorizontal, moveVertical).ToString ());
+		//print (new Vector2(moveHorizontal, moveVertical).ToString ());
 	}
 
 	void FixedUpdate(){
@@ -53,6 +53,15 @@ public class PlayerController : MonoBehaviour {
 		float angle = Mathf.Atan2 (determinant, dotProduct) * 180/Mathf.PI;
 
 		return angle;
-		
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		// Makes key follow the player on contact
+		if(other.gameObject.CompareTag("Key"))
+		{
+			other.gameObject.GetComponent<PickupFollow> ().followPlayer = true;
+			other.gameObject.GetComponent<PickupFollow> ().player = this.gameObject;
+		}
 	}
 }
