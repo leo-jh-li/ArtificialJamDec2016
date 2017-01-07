@@ -16,20 +16,22 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		moveHorizontal = Input.GetAxis ("Horizontal");
-		moveVertical = Input.GetAxis ("Vertical");
+		moveHorizontal = Input.GetAxisRaw ("Horizontal");
+		moveVertical = Input.GetAxisRaw ("Vertical");
+		print (new Vector2(moveHorizontal, moveVertical).ToString ());
 	}
 
 	void FixedUpdate(){
-		if (moveHorizontal == 0) {
+		
+		if (moveHorizontal < 0.1f) {
 			rb.velocity = new Vector2(0, rb.velocity.y);
 		}
-		if (moveVertical == 0) {
+		if (moveVertical < 0.1f) {
 			rb.velocity = new Vector2(rb.velocity.x, 0);
 		}
 
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.velocity = movement * speed;
-		print (movement.ToString ());
+
 	}
 }
