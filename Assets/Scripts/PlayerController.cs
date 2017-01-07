@@ -50,13 +50,16 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Key")) {
 			other.gameObject.GetComponent<PickupFollow> ().followPlayer = true;
 			other.gameObject.GetComponent<PickupFollow> ().player = this.gameObject;
+			other.gameObject.GetComponent<CapsuleCollider2D>().isTrigger = false;
+			other.gameObject.layer = LayerMask.NameToLayer("Player");
 			//update inventory
 			keys.Push (other.gameObject);
 		} else if (other.gameObject.CompareTag ("KeyDoor") && checkHasKey()) {
 
 			//remove key
-			other.gameObject.GetComponent<OpenDoor> ().hasKey = true;
-			keys.Pop();
+			other.gameObject.GetComponent<OpenDoor> ().Open();
+			GameObject popped = (GameObject) keys.Pop ();
+			popped.SetActive (false);
 		}
 			
 	}

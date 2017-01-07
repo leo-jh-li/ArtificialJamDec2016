@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - KeyDoor
+  - onlyTrigger
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Pickup
+  - Player
   - 
   - 
   - 
