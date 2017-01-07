@@ -2856,11 +2856,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114647458563502326, guid: 3455d12aaf161487fbf062ae36868116,
-        type: 2}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3455d12aaf161487fbf062ae36868116, type: 2}
   m_IsPrefabParent: 0
@@ -4703,7 +4698,7 @@ GameObject:
   - component: {fileID: 864657817}
   - component: {fileID: 864657818}
   m_Layer: 0
-  m_Name: Stage 1
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
