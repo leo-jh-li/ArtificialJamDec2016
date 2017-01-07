@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - KeyDoor
+  - ColourDoor
   - onlyTrigger
   layers:
   - Default
@@ -20,8 +21,8 @@ TagManager:
   - 
   - Pickup
   - Player
-  - 
-  - 
+  - Wall
+  - Vision
   - 
   - 
   - 
