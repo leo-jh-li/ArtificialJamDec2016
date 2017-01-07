@@ -21,7 +21,8 @@ public class disableVisibility : MonoBehaviour {
 			Transform room = transform.GetChild (i);
 			for (int j = 0; j < room.childCount; j++) {
 				Transform tile = room.GetChild (j);
-				tile.GetComponent<SpriteRenderer> ().color = new Color(1f, 1f, 1f, 0);	//Transparency
+				if(tile.gameObject.layer == LayerMask.NameToLayer("Floor"))
+					tile.GetComponent<SpriteRenderer> ().color = new Color(1f, 1f, 1f, 0);	//Transparency
 			}
 		}
 	}
