@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95318608781433240}
   - component: {fileID: 61208002457976970}
   - component: {fileID: 114590054405274176}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Colour Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

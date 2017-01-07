@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4032424128615780}
   - component: {fileID: 212851572709629590}
   - component: {fileID: 95157198493782200}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114647458563502326}
   - component: {fileID: 50707195221565212}
   - component: {fileID: 58562617876926474}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 212555709824923452}
   - component: {fileID: 95804656703468648}
   - component: {fileID: 114505112740218052}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15bed8257c1345dd924fb77ef3a28bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 7
   face: {fileID: 1816635012498716}
 --- !u!212 &212555709824923452
 SpriteRenderer:
