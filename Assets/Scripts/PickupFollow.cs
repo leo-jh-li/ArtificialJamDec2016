@@ -14,11 +14,8 @@ public class PickupFollow : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (followPlayer) {
-			transform.position = Vector3.Lerp (this.transform.position, player.transform.position, 0.01f);
-			/*
-			transform.LookAt(player.transform);
-			transform.position += transform.forward * speed * Time.deltaTime;
-			*/
+			transform.position = Vector3.Lerp (this.transform.position, player.transform.position, speed);
+
 		}
 	}
 
