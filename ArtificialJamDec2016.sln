@@ -1,12 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtificialJamDec2016", "ArtificialJamDec2016.csproj", "{55170DA2-91E0-A8BC-EFEC-22FB4F038CB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55170DA2-91E0-A8BC-EFEC-22FB4F038CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55170DA2-91E0-A8BC-EFEC-22FB4F038CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55170DA2-91E0-A8BC-EFEC-22FB4F038CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55170DA2-91E0-A8BC-EFEC-22FB4F038CB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
