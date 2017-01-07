@@ -37,18 +37,22 @@ public class PlayerController : MonoBehaviour {
 		//transform body
 		if (moveHorizontal != 0 || moveVertical != 0) {
 			Vector2 from = new Vector2 (0, -1);
-			float dotProduct = Vector2.Dot (from, movement);
+			float angle = calculateAngle (from, movement);
 			/*
-			dotProduct = dotProduct / (from.magnitude * movement.magnitude);
-			float acos = Mathf.Acos (dotProduct);
-			float angle = acos * 180 / Mathf.PI;
-			*/
+			float dotProduct = Vector2.Dot (from, movement);
 			float determinant = from.x * movement.y - from.y * movement.x;
 			float angle = Mathf.Atan2 (determinant, dotProduct) * 180/Mathf.PI;
+			*/
 			face.transform.rotation = Quaternion.Euler (0,0,angle);
-
-
-			//face.transform.rotation = Quaternion.Euler (0,0, Vector2.Angle (from, movement));
 		}
+	}
+
+	public float calculateAngle(Vector2 vec1, Vector2 vec2){
+		float dotProduct = Vector2.Dot (vec1, vec2);
+		float determinant = vec1.x * vec2.y - vec1.y * vec2.x;
+		float angle = Mathf.Atan2 (determinant, dotProduct) * 180/Mathf.PI;
+
+		return angle;
+		
 	}
 }
