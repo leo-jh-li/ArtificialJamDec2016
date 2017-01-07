@@ -54,20 +54,25 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.layer = LayerMask.NameToLayer("Player");
 			//update inventory
 			keys.Push (other.gameObject);
-		} else if (other.gameObject.CompareTag ("KeyDoor") && checkHasKey()) {
+		}
+	}
 
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		if (coll.gameObject.CompareTag ("KeyDoor") && checkHasKey()) {
 			//remove key
-			other.gameObject.GetComponent<OpenDoor> ().Open();
+			coll.gameObject.GetComponent<OpenDoor> ().Open();
 			GameObject popped = (GameObject) keys.Pop ();
 			popped.SetActive (false);
 		}
-			
+		else if (coll.gameObject.CompareTag ("ColourDoor")) {
+			// TODO: opening colour doors
+			coll.gameObject.GetComponent<ColourDoorManager>().TryOpen ("test");
+		}
 	}
 
 	public bool checkHasKey(){
-
 		return !(keys.Count == 0);
-
 	}
 
 	public float calculateAngle(Vector2 vec1, Vector2 vec2){

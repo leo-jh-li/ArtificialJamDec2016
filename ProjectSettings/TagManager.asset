@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Key
   - KeyDoor
+  - ColourDoor
   - onlyTrigger
+  - StarFloor
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -20,8 +23,8 @@ TagManager:
   - 
   - Pickup
   - Player
-  - 
-  - 
+  - Wall
+  - Vision
   - 
   - 
   - 

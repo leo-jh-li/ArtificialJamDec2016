@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212654456880998608}
   m_Layer: 0
   m_Name: Star Floor
-  m_TagString: Untagged
+  m_TagString: StarFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
