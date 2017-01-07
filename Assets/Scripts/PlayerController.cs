@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.layer = LayerMask.NameToLayer("Player");
 			//update inventory
 			keys.Push (other.gameObject);
+			// disable illuminateEnemy for key
+			other.gameObject.GetComponent<illuminateEnemy>().enabled = false;
 		}
 	}
 
