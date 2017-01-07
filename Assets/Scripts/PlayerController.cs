@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	private float moveHorizontal;
 	private float moveVertical;
 	public float speed;
+	public GameObject face;
 
 	// Use this for initialization
 	void Start () {
@@ -33,5 +34,21 @@ public class PlayerController : MonoBehaviour {
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.velocity = movement * speed;
 
+		//transform body
+		if (moveHorizontal != 0 || moveVertical != 0) {
+			Vector2 from = new Vector2 (0, -1);
+			float dotProduct = Vector2.Dot (from, movement);
+			/*
+			dotProduct = dotProduct / (from.magnitude * movement.magnitude);
+			float acos = Mathf.Acos (dotProduct);
+			float angle = acos * 180 / Mathf.PI;
+			*/
+			float determinant = from.x * movement.y - from.y * movement.x;
+			float angle = Mathf.Atan2 (determinant, dotProduct) * 180/Mathf.PI;
+			face.transform.rotation = Quaternion.Euler (0,0,angle);
+
+
+			//face.transform.rotation = Quaternion.Euler (0,0, Vector2.Angle (from, movement));
+		}
 	}
 }
