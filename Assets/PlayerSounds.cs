@@ -13,9 +13,11 @@ public class PlayerSounds : MonoBehaviour {
 
 	}
 			
-	void OnCollisionEnter2D(Collision2D info){
-		print ("beep");
-		audio.Play ();
+	void OnCollisionEnter2D(Collision2D other){
 
+		if (other.gameObject.CompareTag ("Wall")) {
+			print ("beep");
+			audio.Play ();
+		}
 	}
 }

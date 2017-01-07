@@ -13,8 +13,11 @@ public class VictoryMusic : MonoBehaviour {
 		audio.clip = victory;
 	}
 	
-	void OnTriggerEnter2D(Collider2D coll){
-		print ("JUMP");
-		audio.Play ();
+	void OnTriggerEnter2D(Collider2D other){
+		
+		if (other.gameObject.CompareTag ("StarFloor")) {
+			print ("JUMP");
+			audio.Play ();
+		}
 	}
 }
