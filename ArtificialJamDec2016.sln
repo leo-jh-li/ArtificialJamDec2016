@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{8842594E-490D-87AB-9615-FEEC26FC979F}") = "ArtificialJamDec2016", "Assembly-CSharp.csproj", "{09B97F4C-4697-D38E-1F46-84A480D6A4F5}"
 EndProject
+Project("{8842594E-490D-87AB-9615-FEEC26FC979F}") = "ArtificialJamDec2016", "Assembly-CSharp-Editor.csproj", "{75DC0571-F6CE-285E-BD69-482DBF6EC825}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{09B97F4C-4697-D38E-1F46-84A480D6A4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B97F4C-4697-D38E-1F46-84A480D6A4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B97F4C-4697-D38E-1F46-84A480D6A4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DC0571-F6CE-285E-BD69-482DBF6EC825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DC0571-F6CE-285E-BD69-482DBF6EC825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DC0571-F6CE-285E-BD69-482DBF6EC825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DC0571-F6CE-285E-BD69-482DBF6EC825}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

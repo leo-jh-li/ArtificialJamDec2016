@@ -426,6 +426,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1863284324253766, guid: b977353b395ad4057a1734c8a256a2ad, type: 2}
+      propertyPath: m_TagString
+      value: KeyDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b977353b395ad4057a1734c8a256a2ad, type: 2}
   m_IsPrefabParent: 0
