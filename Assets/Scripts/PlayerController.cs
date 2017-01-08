@@ -12,11 +12,14 @@ public class PlayerController : MonoBehaviour {
 	public GameObject face;
 	Stack keys = new Stack();
 	SpriteRenderer renderer;
+	public AudioSource audio;
+	public AudioClip clip;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		renderer = GetComponent<SpriteRenderer> ();
+		audio = GetComponent<AudioSource> ();
 
 	}
 	
@@ -66,6 +69,9 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (coll.gameObject.CompareTag ("KeyDoor") && checkHasKey()) {
 			//remove key
+			print("OPEN SOUND");
+			audio.clip = clip;
+			audio.Play ();
 			coll.gameObject.GetComponent<OpenDoor> ().Open();
 			GameObject popped = (GameObject) keys.Pop ();
 			popped.SetActive (false);
@@ -77,8 +83,8 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	public bool checkHasKey(){
-			return !(keys.Count == 0);
+	public  bool checkHasKey(){
+		return !(keys.Count == 0);
 	}
 
 	public float calculateAngle(Vector2 vec1, Vector2 vec2){

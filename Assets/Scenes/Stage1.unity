@@ -2856,7 +2856,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114381797177991448, guid: 3455d12aaf161487fbf062ae36868116,
+        type: 2}
+      propertyPath: bump
+      value: 
+      objectReference: {fileID: 8300000, guid: bd84e488d36f34b4a90ed1dc33e738bb, type: 3}
+    - target: {fileID: 114428171639662362, guid: 3455d12aaf161487fbf062ae36868116,
+        type: 2}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1169193018}
+    - target: {fileID: 114428171639662362, guid: 3455d12aaf161487fbf062ae36868116,
+        type: 2}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 873f3d091812446acb26da4fa6f23c24, type: 3}
+    - target: {fileID: 114069569852251786, guid: 3455d12aaf161487fbf062ae36868116,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1169193012}
+    m_RemovedComponents:
+    - {fileID: 114275293552477192, guid: 3455d12aaf161487fbf062ae36868116, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3455d12aaf161487fbf062ae36868116, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &467316693
@@ -6356,6 +6377,11 @@ Prefab:
 --- !u!1 &1169193012 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1568185785873976, guid: 3455d12aaf161487fbf062ae36868116,
+    type: 2}
+  m_PrefabInternal: {fileID: 463155235}
+--- !u!82 &1169193018 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82249267251363554, guid: 3455d12aaf161487fbf062ae36868116,
     type: 2}
   m_PrefabInternal: {fileID: 463155235}
 --- !u!114 &1169193022
