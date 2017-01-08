@@ -22,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     //Detection range?
     public float detectionRange;
+    public float detectionAngle;
     public float speed;
 
     bool sighted;
@@ -76,7 +77,8 @@ public class EnemyBehaviour : MonoBehaviour
         {
             directionToPlayer = player.transform.position - transform.position;
             RaycastHit2D playerFind = Physics2D.Raycast(transform.position, directionToPlayer, distance: detectionRange);
-            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player"))
+            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player") 
+                && Vector2.Angle(facing, directionToPlayer) <= detectionAngle)
             {
                 sighted = true;
             }
