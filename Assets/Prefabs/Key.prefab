@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212611031173891422}
   - component: {fileID: 70490691417976518}
   - component: {fileID: 114644607889415378}
-  - component: {fileID: 114668001112032746}
+  - component: {fileID: 114941506938766922}
   m_Layer: 11
   m_Name: Key
   m_TagString: Key
@@ -70,8 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followPlayer: 0
   player: {fileID: 0}
-  speed: 0.03
---- !u!114 &114668001112032746
+  speed: 0.04
+--- !u!114 &114941506938766922
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

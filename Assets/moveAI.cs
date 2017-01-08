@@ -48,11 +48,13 @@ public class moveAI : MonoBehaviour {
 			float timeLeft = setOfMoves [i].time;
 			rb.velocity = (setOfMoves [i].destination.transform.position - transform.position) / setOfMoves [i].time;
 			float angle = calculateAngle (from, setOfMoves[i].resultantRot);
+			if (angle < 0 && setOfMoves [i].clockwise || angle > 0 && !setOfMoves [i].clockwise)
+				angle = angle - 360;
 
 			while (timeLeft > 0f) {
 				timeLeft = timeLeft - Time.fixedDeltaTime;
 				foreach (GameObject g in toRotate) {
-					g.transform.rotation = Quaternion.Lerp (g.transform.rotation, Quaternion.Euler (0,0,angle), Time.fixedDeltaTime);
+					g.transform.rotation = Quaternion.Lerp (g.transform.rotation, Quaternion.Euler (0,0,angle), 1/timeLeft);
 				}
 				yield return new WaitForFixedUpdate();
 			}
