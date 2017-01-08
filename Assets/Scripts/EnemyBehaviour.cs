@@ -117,7 +117,7 @@ public class EnemyBehaviour : MonoBehaviour
 		//Disable ai movement
 		Destroy(GetComponent<moveAI>());
         rb.velocity = Vector2.zero;
-		StartCoroutine (deathOfMe(deathTimer));
+		//StartCoroutine (deathOfMe(deathTimer));
         Destroy(gameObject, deathTimer);
         //Somewhere far away
         Collider2D goaway = GetComponent<Collider2D>();
