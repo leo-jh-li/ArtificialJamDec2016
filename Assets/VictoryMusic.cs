@@ -16,6 +16,7 @@ public class VictoryMusic : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		
 		if (other.gameObject.CompareTag ("StarFloor")) {
+			audio.clip = victory;
 			print ("JUMP");
 			audio.Play ();
 		}

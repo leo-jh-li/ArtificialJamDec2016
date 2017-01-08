@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		renderer = GetComponent<SpriteRenderer> ();
+
 	}
 	
 	// Update is called once per frame
@@ -70,6 +71,8 @@ public class PlayerController : MonoBehaviour {
 			popped.SetActive (false);
 		}
 		else if (coll.gameObject.CompareTag ("ColourDoor")) {
+			print ("Colour door checker called");
+			ChangeColour.changeColor (renderer.color);
 			ColourDoorManager.TryOpen (renderer.color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
 		}
 	}
