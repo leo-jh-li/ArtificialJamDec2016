@@ -6,17 +6,26 @@ public class PlayerSounds : MonoBehaviour {
 
 	public AudioSource audio;
 	public AudioClip bump;
+	public AudioClip keyPickup;
+
 	// Use this for initialization
 	void Start () {
 		audio = GetComponent<AudioSource> ();
 		audio.clip = bump;
-
 	}
 			
 	void OnCollisionEnter2D(Collision2D other){
 
 		if (other.gameObject.CompareTag ("Wall")) {
-			print ("beep");
+			audio.clip = bump;
+			audio.Play ();
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+
+		if (other.gameObject.CompareTag ("Key")) {
+			audio.clip = keyPickup;
 			audio.Play ();
 		}
 	}
