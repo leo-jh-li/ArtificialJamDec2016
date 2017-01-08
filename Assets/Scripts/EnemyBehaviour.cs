@@ -107,7 +107,7 @@ public class EnemyBehaviour : MonoBehaviour
     //Also, in the method that determines killing, call this method using sendMessage
     //and pass in the player GameObject
     void GetKilled(GameObject killer) {
-        killer.SendMessage("changeColor", color);
+        ChangeColour.changeColor(color);
         Die();
     }
 
@@ -117,7 +117,6 @@ public class EnemyBehaviour : MonoBehaviour
 		//Disable ai movement
 		Destroy(GetComponent<moveAI>());
         rb.velocity = Vector2.zero;
-		//StartCoroutine (deathOfMe(deathTimer));
         Destroy(gameObject, deathTimer);
         //Somewhere far away
         Collider2D goaway = GetComponent<Collider2D>();
@@ -138,8 +137,9 @@ public class EnemyBehaviour : MonoBehaviour
 
 	IEnumerator deathOfMe(float timer){
 		while (timer > 0f) {
-			transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(0, 0, 360*20), Time.fixedDeltaTime);
-			timer -= Time.fixedDeltaTime;
+            transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(0, 0, 360*20), Time.fixedDeltaTime);
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, Time.fixedDeltaTime);
+            timer -= Time.fixedDeltaTime;
 			yield return new WaitForFixedUpdate ();
 		}
 		yield return null;
