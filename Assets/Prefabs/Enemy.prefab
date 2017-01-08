@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212391028250527192}
   - component: {fileID: 95599847388953692}
   - component: {fileID: 114657852933005256}
-  m_Layer: 12
+  m_Layer: 9
   m_Name: EnemyFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,8 @@ GameObject:
   - component: {fileID: 50956095506356156}
   - component: {fileID: 58542407245985306}
   - component: {fileID: 114728347960769886}
-  m_Layer: 12
+  - component: {fileID: 114354757838451762}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +58,8 @@ GameObject:
   - component: {fileID: 4678086952702110}
   - component: {fileID: 212390875864202350}
   - component: {fileID: 95624927753214590}
-  m_Layer: 12
+  - component: {fileID: 114302628460464558}
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481439270393560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.35, y: 2.43, z: 0}
+  m_LocalPosition: {x: 7.245315, y: -13.9583845, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4762751342393148}
@@ -173,6 +175,35 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114302628460464558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1886734561882390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a382d9f710bf64a97b44d76b53114d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toRotate: []
+  destination: []
+  resultantRot: []
+  clockwise: 
+  time: []
+--- !u!114 &114354757838451762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481439270393560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28bcbc0ed928604180630cd42238ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerReference:
+  - {fileID: 0}
 --- !u!114 &114657852933005256
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,14 +22,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     //Detection range?
     public float detectionRange;
-<<<<<<< HEAD
-    public float speed;	
-    
-=======
     public float detectionAngle;
     public float speed;
 
->>>>>>> 91402283c10b0ae9edf1930188db11f846245ad7
     bool sighted;
 
     void Start()

@@ -11,7 +11,7 @@ public class attack : MonoBehaviour {
 		coroutines = new Dictionary<string, Coroutine> ();
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
+	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.layer == LayerMask.NameToLayer ("Enemy")) {
 			//Enable the instructions
 			instruction.GetComponent<SpriteRenderer> ().enabled = true;
@@ -23,7 +23,7 @@ public class attack : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D col){
+	void OnCollisionExit2D(Collision2D col){
 		//Disable the instructions
 		if(col.gameObject.layer == LayerMask.NameToLayer ("Enemy")){
 			instruction.GetComponent<SpriteRenderer>().enabled = false;

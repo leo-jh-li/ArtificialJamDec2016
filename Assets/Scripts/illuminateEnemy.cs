@@ -18,10 +18,14 @@ public class illuminateEnemy : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, (player.transform.position - transform.position).normalized, Mathf.Infinity, myLayer);
 			if (hit.collider != null) {
 				if (hit.transform.gameObject.layer == LayerMask.NameToLayer ("Player")) {
-					GetComponent<SpriteRenderer> ().enabled = true;
+					foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer> ()) {
+						sr.enabled = true;
+					}
 					break;
 				} else {
-					GetComponent<SpriteRenderer> ().enabled = false;
+					foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer> ()) {
+						sr.enabled = false;
+					}
 				}
 			}
 		}
