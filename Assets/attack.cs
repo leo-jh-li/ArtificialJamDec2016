@@ -48,7 +48,7 @@ public class attack : MonoBehaviour {
 		} 
 		else if (col.gameObject.layer == LayerMask.NameToLayer ("Enemy") && col.gameObject.GetComponent<InvincibleEnemy> () != null) {
 			//Disable the instructions (cant do anything)
-			instruction2.GetComponent<SpriteRenderer> ().enabled = true;
+			instruction2.GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	}
 
