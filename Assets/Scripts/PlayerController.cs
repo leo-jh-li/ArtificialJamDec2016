@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
 			//update inventory
 			keys.Push (other.gameObject);
 			// disable illuminateEnemy for key
-			other.gameObject.GetComponent<illuminateEnemy>().enabled = false;
+			//other.gameObject.GetComponent<illuminateEnemy>().enabled = false;
 		}
 	}
 
