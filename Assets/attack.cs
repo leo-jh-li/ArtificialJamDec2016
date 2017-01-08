@@ -19,7 +19,8 @@ public class attack : MonoBehaviour {
 
 			//Run co-routine which enables ability to kill
 			Coroutine co = StartCoroutine(killTarget(col.gameObject));
-			coroutines.Add (col.gameObject.name, co);
+			if(!coroutines.ContainsKey(col.gameObject.name))
+				coroutines.Add (col.gameObject.name, co);
 		}
 	}
 

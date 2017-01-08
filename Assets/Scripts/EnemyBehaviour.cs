@@ -26,6 +26,8 @@ public class EnemyBehaviour : MonoBehaviour
     public float speed;
 	//Death indicator
 	public bool dying = false;
+	public float deathTimer = 5.0f;
+	public GameObject deathReplacement;
     
 	bool sighted;
 
@@ -112,14 +114,16 @@ public class EnemyBehaviour : MonoBehaviour
     //Fun
     void Die()
     {
+		//Disable ai movement
+		gameObject.GetComponent<moveAI>().enabled = false;
         rb.velocity = Vector2.zero;
-        rb.AddTorque(9001f);
-        Destroy(gameObject, 5.0f);
+		StartCoroutine (deathOfMe(deathTimer));
+        Destroy(gameObject, deathTimer);
         //Somewhere far away
         Collider2D goaway = GetComponent<Collider2D>();
 		goaway.offset = new Vector2(999, 999);
 		dying = true;
-
+		deathReplacement.GetComponent<Collider2D> ().enabled = true;
     }
 
     // CP from PlayerController
@@ -132,4 +136,12 @@ public class EnemyBehaviour : MonoBehaviour
         return angle;
     }
 
+	IEnumerator deathOfMe(float timer){
+		while (timer > 0f) {
+			transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(0, 0, 360*20), Time.fixedDeltaTime);
+			timer -= Time.fixedDeltaTime;
+			yield return new WaitForFixedUpdate ();
+		}
+		yield return null;
+	}
 }
