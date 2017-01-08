@@ -26,7 +26,7 @@ public class moveAI : MonoBehaviour {
 		for (int i = 0; i < iterable; i = (i + 1) % iterable) {
 			//Get Values
 			float timeLeft = setOfMoves [i].time;
-			float angle = calculateAngle (setOfMoves [i].resultantRot, rb.rotation);
+			float angle = calculateAngle (setOfMoves [i].resultantRot, new Vector2(transform.rotation.x, transform.rotation.y));
 			if (angle < 0 && setOfMoves [i].clockwise || angle > 0 && !setOfMoves [i].clockwise)
 				angle = angle - 360;
 
@@ -38,7 +38,7 @@ public class moveAI : MonoBehaviour {
 			}
 			//Set the actual ending position (to avoid weird offsets)
 			transform.position = setOfMoves [i].destination.transform.position;
-			transform.rotation = setOfMoves [i].resultantRot;
+			transform.rotation = Quaternion.LookRotation(setOfMoves [i].resultantRot);
 		}
 		yield return null;
 	}
