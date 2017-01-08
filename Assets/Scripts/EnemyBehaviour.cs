@@ -10,12 +10,15 @@ public class EnemyBehaviour : MonoBehaviour
 
     Rigidbody2D rb;
     GameObject player;
-    
+    GameObject face;
+
+    public Vector2 facing;
+    public Vector2 directionToPlayer;
+
     //Colour of enemy
     public Color color;
     //SpriteRenderer of the body
     public SpriteRenderer body;
-    Vector2 directionToPlayer;
     
     //Detection range?
     public float detectionRange;
@@ -34,11 +37,16 @@ public class EnemyBehaviour : MonoBehaviour
         }
         body.color = color;
         sighted = false;
+        facing = Vector2.up;
+        face = transform.FindChild("EnemyFace").gameObject;
     }
     
     void Update() {
+        FindPlayer();
         if (sighted) {
             //TODO: What happens if enemy sees player
+            facing = directionToPlayer;
+            FaceDirection();
         }
         else {
             //TODO: What happens normally
@@ -46,10 +54,23 @@ public class EnemyBehaviour : MonoBehaviour
     }
     
     void FixedUpdate(){
-        if (player != null) {
-            directionToPlayer = transform.position - player.transform.position;
-            RaycastHit2D playerFind = Physics2D.Raycast(transform.position, directionToPlayer, distance:detectionRange);
-            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player")){
+        
+    }
+
+    //Orients character to direction of facing
+    void FaceDirection() {
+        face.transform.rotation = Quaternion.Euler(0, 0, calculateAngle(Vector2.down, facing));
+    }
+
+    //Fires a raycast toward the player and sets sighted
+    //If player is null, attempts to find the player gameObject instead.
+    void FindPlayer() {
+        if (player != null)
+        {
+            directionToPlayer = player.transform.position - transform.position;
+            RaycastHit2D playerFind = Physics2D.Raycast(transform.position, directionToPlayer, distance: detectionRange);
+            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player"))
+            {
                 sighted = true;
             }
             else {
@@ -59,14 +80,11 @@ public class EnemyBehaviour : MonoBehaviour
         else {
             //Recommended to use FindWithTag instead when calling repeatedly
             player = GameObject.Find("Player");
-            if (player){
+            if (player)
+            {
                 Debug.Log("Player Found!");
             }
         }
-    }
-
-    void FaceDirection() {
-        //TODO: Rotate face when enemy changes direction
     }
     
     //Wanna try out SendMessage as a means of passing values between objects.
@@ -85,6 +103,16 @@ public class EnemyBehaviour : MonoBehaviour
         rb.AddTorque(9001f);
         Destroy(gameObject, 5.0f);
         GetComponent<Collider2D>().enabled = false;
+    }
+
+    // CP from PlayerController
+    public float calculateAngle(Vector2 vec1, Vector2 vec2)
+    {
+        float dotProduct = Vector2.Dot(vec1, vec2);
+        float determinant = vec1.x * vec2.y - vec1.y * vec2.x;
+        float angle = Mathf.Atan2(determinant, dotProduct) * 180 / Mathf.PI;
+
+        return angle;
     }
 
 }

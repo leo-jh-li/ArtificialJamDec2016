@@ -10,6 +10,7 @@ TagManager:
   - onlyTrigger
   - StarFloor
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX
