@@ -9,14 +9,33 @@ public class moveAI : MonoBehaviour {
 		public Vector2 resultantRot;
 		public bool clockwise;
 		public float time;
+
+		public movement(GameObject des, Vector2 rot, bool dir, float t){
+			destination = des;
+			resultantRot = rot;
+			clockwise = dir;
+			time = t;
+		}
 	}
+	public GameObject[] toRotate;
+
+	public GameObject[] destination;
+	public Vector2[] resultantRot;
+	public bool[] clockwise;
+	public float[] time;
 
 	public movement[] setOfMoves;
 	private Rigidbody2D rb;
+	private GameObject face;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		setOfMoves = new movement[destination.Length];
+
+		for (int i = 0; i < setOfMoves.Length; i++) {
+			setOfMoves [i] = new movement (destination[i], resultantRot[i], clockwise[i], time[i]);
+		}
 		StartCoroutine(moveEnemy());
 	}
 
@@ -25,20 +44,24 @@ public class moveAI : MonoBehaviour {
 
 		for (int i = 0; i < iterable; i = (i + 1) % iterable) {
 			//Get Values
+			Vector2 from = new Vector2 (0, -1);
 			float timeLeft = setOfMoves [i].time;
-			float angle = calculateAngle (setOfMoves [i].resultantRot, new Vector2(transform.rotation.x, transform.rotation.y));
-			if (angle < 0 && setOfMoves [i].clockwise || angle > 0 && !setOfMoves [i].clockwise)
-				angle = angle - 360;
-
 			rb.velocity = (setOfMoves [i].destination.transform.position - transform.position) / setOfMoves [i].time;
-			rb.angularVelocity = angle * Mathf.Deg2Rad / setOfMoves [i].time;
+			float angle = calculateAngle (from, setOfMoves[i].resultantRot);
+
 			while (timeLeft > 0f) {
 				timeLeft = timeLeft - Time.fixedDeltaTime;
+				foreach (GameObject g in toRotate) {
+					g.transform.rotation = Quaternion.Lerp (g.transform.rotation, Quaternion.Euler (0,0,angle), Time.fixedDeltaTime);
+				}
 				yield return new WaitForFixedUpdate();
 			}
 			//Set the actual ending position (to avoid weird offsets)
 			transform.position = setOfMoves [i].destination.transform.position;
-			transform.rotation = Quaternion.LookRotation(setOfMoves [i].resultantRot);
+			foreach (GameObject g in toRotate) {
+				g.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+			}
+
 		}
 		yield return null;
 	}
