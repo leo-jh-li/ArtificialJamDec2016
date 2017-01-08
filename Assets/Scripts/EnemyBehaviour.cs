@@ -24,8 +24,11 @@ public class EnemyBehaviour : MonoBehaviour
     public float detectionRange;
     public float detectionAngle;
     public float speed;
+	//Death indicator
+	public bool dying = false;
+    
+	bool sighted;
 
-    bool sighted;
 
     void Start()
     {
@@ -114,8 +117,9 @@ public class EnemyBehaviour : MonoBehaviour
         Destroy(gameObject, 5.0f);
         //Somewhere far away
         Collider2D goaway = GetComponent<Collider2D>();
-        goaway.transform.position = new Vector2(999, 999);
-        goaway.enabled = false;
+		goaway.offset = new Vector2(999, 999);
+		dying = true;
+
     }
 
     // CP from PlayerController

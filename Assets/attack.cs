@@ -12,7 +12,7 @@ public class attack : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
-		if (col.gameObject.layer == LayerMask.NameToLayer ("Enemy")) {
+		if (col.gameObject.layer == LayerMask.NameToLayer ("Enemy") && !col.gameObject.GetComponent<EnemyBehaviour>().dying) {
 			//Enable the instructions
 			instruction.GetComponent<SpriteRenderer> ().enabled = true;
 			instruction.GetComponent<Animator> ().enabled = true;
@@ -28,9 +28,10 @@ public class attack : MonoBehaviour {
 		if(col.gameObject.layer == LayerMask.NameToLayer ("Enemy")){
 			instruction.GetComponent<SpriteRenderer>().enabled = false;
 			instruction.GetComponent<Animator> ().enabled = false;
-			if(coroutines[col.gameObject.name] != null)
+			if (coroutines.ContainsKey(col.gameObject.name)) {
 				StopCoroutine (coroutines[col.gameObject.name]);				//Stop the coroutine (if still running)	
-			coroutines.Remove(col.gameObject.name);								//Remove the coroutine reference
+				coroutines.Remove(col.gameObject.name);							//Remove the coroutine reference
+			}
 		}
 	}
 
