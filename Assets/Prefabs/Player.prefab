@@ -40,9 +40,11 @@ GameObject:
   - component: {fileID: 50707195221565212}
   - component: {fileID: 58562617876926474}
   - component: {fileID: 82249267251363554}
-  - component: {fileID: 114982161851068768}
   - component: {fileID: 114381797177991448}
+  - component: {fileID: 114982161851068768}
   - component: {fileID: 212588726017273564}
+  - component: {fileID: 114069569852251786}
+  - component: {fileID: 114275293552477192}
   m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
@@ -257,6 +259,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114069569852251786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568185785873976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26abac7b7dc4a44488badfb8a30a68b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!114 &114275293552477192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568185785873976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25aa42abfbf08ab4d92b0d9e0980bee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114381797177991448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 82249267251363554}
-  victory: {fileID: 8300000, guid: e0c9e2262e608cf439f6f0937bf0436d, type: 3}
+  victory: {fileID: 8300000, guid: 543ad19048c2a714890fea27e5c34382, type: 3}
 --- !u!212 &212555709824923452
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -374,7 +399,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0, b: 0.10953343, a: 1}
+  m_Color: {r: 0.53333336, g: 0.53333336, b: 0.53333336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212851572709629590

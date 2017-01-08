@@ -8,6 +8,7 @@ public class ColourDoorManager : MonoBehaviour {
 
 		// TODO: test player colour against door's colour
 		if (playerColor.a == doorColor.a && playerColor.b == doorColor.b && playerColor.g == doorColor.g) {
+			print ("Pass the colour door");
 			coll.collider.enabled = false;
 		}
 	}
