@@ -112,7 +112,10 @@ public class EnemyBehaviour : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.AddTorque(9001f);
         Destroy(gameObject, 5.0f);
-        GetComponent<Collider2D>().enabled = false;
+        //Somewhere far away
+        Collider2D goaway = GetComponent<Collider2D>();
+        goaway.transform.position = new Vector2(999, 999);
+        goaway.enabled = false;
     }
 
     // CP from PlayerController
