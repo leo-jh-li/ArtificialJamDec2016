@@ -49,7 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (player != null) {
             directionToPlayer = transform.position - player.transform.position;
             RaycastHit2D playerFind = Physics2D.Raycast(transform.position, directionToPlayer, distance:detectionRange);
-            if (playerFind.collider.gameObject.CompareTag("Player")){
+            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player")){
                 sighted = true;
             }
             else {
