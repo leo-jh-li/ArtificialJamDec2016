@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114728347960769886}
   - component: {fileID: 114354757838451762}
   - component: {fileID: 212456347594745620}
+  - component: {fileID: 114504784264547374}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -129,8 +130,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481439270393560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.245315, y: -13.9583845, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -10.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4762751342393148}
@@ -148,7 +149,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1481439270393560}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -250,6 +251,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerReference:
   - {fileID: 0}
+--- !u!114 &114504784264547374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481439270393560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a382d9f710bf64a97b44d76b53114d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toRotate:
+  - {fileID: 1290176451249534}
+  destination: []
+  resultantRot: []
+  clockwise: 
+  time: []
 --- !u!114 &114657852933005256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,6 +298,7 @@ MonoBehaviour:
   detectionAngle: 0
   speed: 0
   dying: 0
+  deathTimer: 5
   deathReplacement: {fileID: 1173941023787660}
 --- !u!212 &212333725940876018
 SpriteRenderer:
