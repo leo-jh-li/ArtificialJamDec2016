@@ -60,6 +60,9 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else {
             //TODO: What happens normally
+            //get z of euler angles and change to vector2
+            float a = face.transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
+            facing = new Vector2(Mathf.Sin(a), Mathf.Cos(a));
         }
     }
 
@@ -82,10 +85,14 @@ public class EnemyBehaviour : MonoBehaviour
         {
             directionToPlayer = player.transform.position - transform.position;
             RaycastHit2D playerFind = Physics2D.Raycast(transform.position, directionToPlayer, distance: detectionRange);
-            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player") 
-                && Vector2.Angle(facing, directionToPlayer) <= detectionAngle)
+            if (playerFind.collider && playerFind.collider.gameObject.CompareTag("Player"))
             {
+                float pa = Vector2.Angle(facing, directionToPlayer);
+                Debug.Log(pa);
+                if (pa <= detectionAngle / 2) {
                 sighted = true;
+                Debug.Log(pa + "!");
+                }
             }
             else {
                 sighted = false;
@@ -116,6 +123,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
 		//Disable ai movement
 		Destroy(GetComponent<moveAI>());
+        rb.velocity = Vector2.zero;
         rb.angularDrag = 0;
         rb.angularVelocity = 10000;
 		StartCoroutine (deathOfMe(deathTimer));
