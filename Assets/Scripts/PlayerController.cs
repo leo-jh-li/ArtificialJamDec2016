@@ -87,8 +87,8 @@ public class PlayerController : MonoBehaviour {
 		else if (coll.gameObject.CompareTag ("ColourDoor")) {
 			print ("Colour door checker called");
 			// TODO: this
-			ChangeColour.changeColor (renderer.color);
-			ColourDoorManager.TryOpen (renderer.color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
+			//ChangeColour.changeColor (renderer.color);
+			ColourDoorManager.TryOpen (this.transform.Find("Body").gameObject.GetComponent<SpriteRenderer>().color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
 		}
 	}
 
@@ -105,4 +105,6 @@ public class PlayerController : MonoBehaviour {
 
 		return angle;
 	}
+
+
 }

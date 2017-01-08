@@ -32,7 +32,7 @@ public class moveAI : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		setOfMoves = new movement[destination.Length];
-
+		print (setOfMoves.Length);
 		for (int i = 0; i < setOfMoves.Length; i++) {
 			setOfMoves [i] = new movement (destination[i], resultantRot[i], clockwise[i], time[i]);
 		}
