@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 212588726017273564}
   - component: {fileID: 114069569852251786}
   - component: {fileID: 114428171639662362}
-  - component: {fileID: 114812086723250922}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -325,17 +324,6 @@ MonoBehaviour:
   audio: {fileID: 82249267251363554}
   bump: {fileID: 8300000, guid: bd84e488d36f34b4a90ed1dc33e738bb, type: 3}
   open: {fileID: 8300000, guid: 873f3d091812446acb26da4fa6f23c24, type: 3}
---- !u!114 &114812086723250922
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1568185785873976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25aa42abfbf08ab4d92b0d9e0980bee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114982161851068768
 MonoBehaviour:
   m_ObjectHideFlags: 1
