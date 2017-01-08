@@ -150,8 +150,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1568185785873976}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.14, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4094917780040250}
@@ -440,8 +440,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   toRotate:
-  - {fileID: 1099834774312216, guid: b8048b4b8f9334f1c82504431aeef949, type: 2}
-  - {fileID: 1294974026542244, guid: 8f7e20f70966047d48b6ee56b1189ca6, type: 2}
+  - {fileID: 1162720959648736}
+  - {fileID: 1080205486586478}
   audio: {fileID: 82686195515247414}
   bump: {fileID: 8300000, guid: bd84e488d36f34b4a90ed1dc33e738bb, type: 3}
   open: {fileID: 8300000, guid: 873f3d091812446acb26da4fa6f23c24, type: 3}
