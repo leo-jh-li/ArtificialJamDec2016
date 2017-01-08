@@ -88,12 +88,6 @@ public class PlayerController : MonoBehaviour {
 			ChangeColour.changeColor (renderer.color);
 			ColourDoorManager.TryOpen (renderer.color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
 		}
-		else if (coll.gameObject.CompareTag ("Wall")) {
-			print ("Colour door checker called");
-			// TODO: this ......////////
-			ChangeColour.changeColor (renderer.color);
-			ColourDoorManager.TryOpen (renderer.color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
-		}
 	}
 
 
