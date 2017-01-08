@@ -44,11 +44,11 @@ GameObject:
   - component: {fileID: 114982161851068768}
   - component: {fileID: 212588726017273564}
   - component: {fileID: 114069569852251786}
-  - component: {fileID: 114275293552477192}
   - component: {fileID: 114428171639662362}
+  - component: {fileID: 114812086723250922}
   m_Layer: 12
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,18 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26abac7b7dc4a44488badfb8a30a68b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
---- !u!114 &114275293552477192
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1568185785873976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25aa42abfbf08ab4d92b0d9e0980bee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114381797177991448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,7 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 82249267251363554}
-  bump: {fileID: 8300000, guid: 142e2552881f34b329aeac4055938979, type: 3}
+  bump: {fileID: 8300000, guid: bd84e488d36f34b4a90ed1dc33e738bb, type: 3}
+  keyPickup: {fileID: 8300000, guid: 6a80c6bcc08b041c595c982db15b55e7, type: 3}
 --- !u!114 &114428171639662362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e92857895de141f992e6ff4c8b9ef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
+  audio: {fileID: 82249267251363554}
   clip: {fileID: 0}
 --- !u!114 &114505112740218052
 MonoBehaviour:
@@ -333,8 +322,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   face: {fileID: 1816635012498716}
-  audio: {fileID: 0}
-  clip: {fileID: 0}
+  audio: {fileID: 82249267251363554}
+  bump: {fileID: 8300000, guid: bd84e488d36f34b4a90ed1dc33e738bb, type: 3}
+  open: {fileID: 8300000, guid: 873f3d091812446acb26da4fa6f23c24, type: 3}
+--- !u!114 &114812086723250922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568185785873976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25aa42abfbf08ab4d92b0d9e0980bee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114982161851068768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,7 +416,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 0.53333336, g: 0.53333336, b: 0.53333336, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212851572709629590
