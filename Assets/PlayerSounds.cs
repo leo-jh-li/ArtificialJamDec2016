@@ -16,6 +16,7 @@ public class PlayerSounds : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other){
 
 		if (other.gameObject.CompareTag ("Wall")) {
+			audio.clip = bump;
 			print ("beep");
 			audio.Play ();
 		}
