@@ -2797,6 +2797,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06a798362e5456b4dabb37f0578713b3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &419891768 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1446074029278688, guid: 06a798362e5456b4dabb37f0578713b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2096170764}
 --- !u!4 &424229657 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4548806644142120, guid: 06a798362e5456b4dabb37f0578713b3,
@@ -3353,11 +3358,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06a798362e5456b4dabb37f0578713b3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &527912187 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1446074029278688, guid: 06a798362e5456b4dabb37f0578713b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 462815447}
 --- !u!1001 &534353713
 Prefab:
   m_ObjectHideFlags: 0
@@ -4397,8 +4397,8 @@ MonoBehaviour:
   - {fileID: 565558613}
   destination:
   - {fileID: 2146557829}
-  - {fileID: 527912187}
-  - {fileID: 527912187}
+  - {fileID: 419891768}
+  - {fileID: 419891768}
   - {fileID: 2146557829}
   resultantRot:
   - {x: -1, y: 0}
