@@ -19,7 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     
     //Detection range?
     public float detectionRange;
-    public float speed;
+    public float speed;	
     
     bool sighted;
     
@@ -75,7 +75,7 @@ public class EnemyBehaviour : MonoBehaviour
     //Also, in the method that determines killing, call this method using sendMessage
     //and pass in the player GameObject
     void GetKilled(GameObject killer) {
-        killer.SendMessage("GetColor", color);
+        killer.SendMessage("changeColor", color);
         Die();
     }
 

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private float moveHorizontal;
 	private float moveVertical;
 	public float speed;
-	public GameObject face;
+	public GameObject[] toRotate;
 	Stack keys = new Stack();
 	SpriteRenderer renderer;
 
@@ -42,7 +42,9 @@ public class PlayerController : MonoBehaviour {
 			Vector2 from = new Vector2 (0, -1);
 			float angle = calculateAngle (from, movement);
 
-			face.transform.rotation = Quaternion.Euler (0,0,angle);
+			foreach (GameObject g in toRotate) {
+				g.transform.rotation = Quaternion.Euler (0,0,angle);
+			}
 		}
 	}
 		
