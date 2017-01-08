@@ -10,13 +10,11 @@ public class illuminateRoom : MonoBehaviour {
 		Transform parent = transform.parent;
 		GetComponent<Collider2D> ().enabled = false;
 		StartCoroutine (findIllum(parent));
-		print (parent);
 	}
 
 	IEnumerator findIllum(Transform parent){
 		for (int i = 0; i < parent.childCount; i++) {
 			GameObject child = parent.GetChild (i).gameObject;
-			print (child);
 			StartCoroutine (lerpIllumination(child.GetComponent<SpriteRenderer> ()));
 			yield return new WaitForFixedUpdate ();
 		}

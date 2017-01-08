@@ -18,7 +18,6 @@ public class PlayerSounds : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("Wall")) {
 			audio.clip = bump;
-			print ("beep");
 			audio.Play ();
 		}
 	}

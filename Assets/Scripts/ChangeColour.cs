@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChangeColour : MonoBehaviour {
 
 	public static SpriteRenderer[] children;
+
 	void Start () {
 		children = GetComponentsInChildren<SpriteRenderer>();	// Use this for initialization
 	}
