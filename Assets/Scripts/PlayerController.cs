@@ -10,13 +10,18 @@ public class PlayerController : MonoBehaviour {
 	private float moveVertical;
 	public float speed;
 	public GameObject face;
-	Stack keys = new Stack();
+	Stack keys;
 	SpriteRenderer renderer;
+	public AudioSource audio;
+	public AudioClip bump;
+	public AudioClip open;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+		keys = new Stack();
 		renderer = GetComponent<SpriteRenderer> ();
+		audio = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -63,19 +68,32 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		if (coll.gameObject.CompareTag ("KeyDoor") && checkHasKey()) {
-			//remove key
-			coll.gameObject.GetComponent<OpenDoor> ().Open();
-			GameObject popped = (GameObject) keys.Pop ();
-			popped.SetActive (false);
+		if (coll.gameObject.CompareTag ("KeyDoor")) {
+			if (checkHasKey ()) {
+				audio.clip = open;
+				audio.Play ();
+				coll.gameObject.GetComponent<OpenDoor> ().Open();
+				//remove key
+				GameObject popped = (GameObject) keys.Pop ();
+				popped.SetActive (false);
+			} else {
+				// bump into door sound
+				audio.clip = bump;
+				audio.Play ();
+			}
 		}
 		else if (coll.gameObject.CompareTag ("ColourDoor")) {
+			print ("Colour door checker called");
+			// TODO: this
+			ChangeColour.changeColor (renderer.color);
 			ColourDoorManager.TryOpen (renderer.color, coll.gameObject.GetComponent<SpriteRenderer>().color, coll);
 		}
 	}
 
-	public bool checkHasKey(){
-			return !(keys.Count == 0);
+
+
+	public  bool checkHasKey(){
+		return !(keys.Count == 0);
 	}
 
 	public float calculateAngle(Vector2 vec1, Vector2 vec2){
