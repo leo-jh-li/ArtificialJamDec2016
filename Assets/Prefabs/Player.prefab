@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 82686195515247414}
-  clip: {fileID: 8300000, guid: e0c9e2262e608cf439f6f0937bf0436d, type: 3}
+  clip: {fileID: 8300000, guid: 285feace4897340e0a98f3f11309a0e5, type: 3}
 --- !u!114 &114589945762675432
 MonoBehaviour:
   m_ObjectHideFlags: 1
