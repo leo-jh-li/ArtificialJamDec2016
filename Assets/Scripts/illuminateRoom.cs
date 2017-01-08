@@ -7,9 +7,11 @@ public class illuminateRoom : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		//Find the parent room and illuminate the place (Make visible)
-		Transform parent = transform.parent;
-		GetComponent<Collider2D> ().enabled = false;
-		StartCoroutine (findIllum(parent));
+		if(col.gameObject.layer == LayerMask.NameToLayer("Player")){
+			Transform parent = transform.parent;
+			GetComponent<Collider2D> ().enabled = false;
+			StartCoroutine (findIllum(parent));	
+		}
 	}
 
 	IEnumerator findIllum(Transform parent){

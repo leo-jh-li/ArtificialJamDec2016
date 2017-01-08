@@ -2797,11 +2797,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06a798362e5456b4dabb37f0578713b3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &419891768 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1446074029278688, guid: 06a798362e5456b4dabb37f0578713b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 2096170764}
 --- !u!4 &424229657 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4548806644142120, guid: 06a798362e5456b4dabb37f0578713b3,
@@ -2962,11 +2957,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114647458563502326, guid: 3455d12aaf161487fbf062ae36868116,
-        type: 2}
-      propertyPath: toRotate.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4340336833038192, guid: 3455d12aaf161487fbf062ae36868116, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.18
@@ -2999,28 +2989,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114647458563502326, guid: 3455d12aaf161487fbf062ae36868116,
-        type: 2}
-      propertyPath: toRotate.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114647458563502326, guid: 3455d12aaf161487fbf062ae36868116,
-        type: 2}
-      propertyPath: toRotate.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 61123563989144606, guid: 3455d12aaf161487fbf062ae36868116,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114647458563502326, guid: 3455d12aaf161487fbf062ae36868116,
-        type: 2}
-      propertyPath: speed
-      value: 40
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114812086723250922, guid: 3455d12aaf161487fbf062ae36868116, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3455d12aaf161487fbf062ae36868116, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &467316693
@@ -4397,8 +4366,8 @@ MonoBehaviour:
   - {fileID: 565558613}
   destination:
   - {fileID: 2146557829}
-  - {fileID: 419891768}
-  - {fileID: 419891768}
+  - {fileID: 2066475860}
+  - {fileID: 2066475860}
   - {fileID: 2146557829}
   resultantRot:
   - {x: -1, y: 0}
@@ -10699,6 +10668,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4061433835770230, guid: 2ee8701e97f45144da167126d9994895,
     type: 2}
   m_PrefabInternal: {fileID: 2066001480}
+--- !u!1 &2066475860 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1446074029278688, guid: 06a798362e5456b4dabb37f0578713b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 534353713}
 --- !u!1001 &2066923167
 Prefab:
   m_ObjectHideFlags: 0

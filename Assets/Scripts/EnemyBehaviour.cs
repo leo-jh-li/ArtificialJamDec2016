@@ -115,7 +115,7 @@ public class EnemyBehaviour : MonoBehaviour
     void Die()
     {
 		//Disable ai movement
-		gameObject.GetComponent<moveAI>().enabled = false;
+		Destroy(GetComponent<moveAI>());
         rb.velocity = Vector2.zero;
 		StartCoroutine (deathOfMe(deathTimer));
         Destroy(gameObject, deathTimer);
