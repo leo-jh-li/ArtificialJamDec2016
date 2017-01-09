@@ -12135,7 +12135,7 @@ Prefab:
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[4]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
@@ -12160,7 +12160,7 @@ Prefab:
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[9]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f9fc20ac5f53a54cafd372a3bc58b95, type: 2}
