@@ -1355,12 +1355,12 @@ Prefab:
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[0]
-      value: 2
+      value: 1.925
       objectReference: {fileID: 0}
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[1]
-      value: 2
+      value: 1.925
       objectReference: {fileID: 0}
     - target: {fileID: 212391028250527192, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
@@ -6919,12 +6919,12 @@ Prefab:
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[0]
-      value: 2
+      value: 1.925
       objectReference: {fileID: 0}
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[1]
-      value: 2
+      value: 1.925
       objectReference: {fileID: 0}
     - target: {fileID: 212391028250527192, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
@@ -9495,12 +9495,12 @@ Prefab:
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[0]
-      value: 2
+      value: 1.925
       objectReference: {fileID: 0}
     - target: {fileID: 114504784264547374, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
       propertyPath: time.Array.data[1]
-      value: 2
+      value: 1.925
       objectReference: {fileID: 0}
     - target: {fileID: 212391028250527192, guid: 9f9fc20ac5f53a54cafd372a3bc58b95,
         type: 2}
