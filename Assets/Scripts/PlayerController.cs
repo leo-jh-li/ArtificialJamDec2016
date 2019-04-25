@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource audio;
 	public AudioClip bump;
 	public AudioClip open;
+	private StageLoader stageLoader;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 		keys = new Stack();
 		renderer = GetComponent<SpriteRenderer> ();
 		audio = GetComponent<AudioSource> ();
+		stageLoader = GetComponent<StageLoader>();
 	}
 	
 	// Update is called once per frame
@@ -65,6 +67,9 @@ public class PlayerController : MonoBehaviour {
 			keys.Push (other.gameObject);
 			// disable illuminateEnemy for key
 			//other.gameObject.GetComponent<illuminateEnemy>().enabled = false;
+		} else if (other.gameObject.CompareTag ("StarFloor")) {
+			print ("Level Complete");
+			StartCoroutine(stageLoader.GoToNextLevel());
 		}
 	}
 
